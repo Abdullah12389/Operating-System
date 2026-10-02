@@ -8,3 +8,6 @@ Compile the C code by using no prebuild linkers and with optimization
 
 Linking everything together in minos.bin
 3. i686-elf-ld -T linker.ld -o minos.bin boot.o kernel.o
+
+Run the operating System
+4. qemu-system-i386 -kernel minos.bin
