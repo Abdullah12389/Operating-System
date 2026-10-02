@@ -1,3 +1,4 @@
+void printf(const char *format, ...);
 void clear_screen(){
     volatile unsigned short* const vga_buffer = (unsigned short*) 0xB8000;
     for(int i=0;i<25*80;i++){
@@ -6,13 +7,6 @@ void clear_screen(){
 }
 void kernel_main(){
     clear_screen();
-    char *video_memory = (char*) 0xB8000;
-    const char* str = "Hello From MinOS";
-    int i = 0;
-    while(str[i]!='\0'){
-        video_memory[i*2] = str[i];
-        video_memory[i*2+1] = 0x1F;
-        i++;
-    }
+    printf("Hello this is %s computer with price %d and %c range %m and it is really great to see you suceed","Abdullah",1000,'M');
     while(1);
 }
